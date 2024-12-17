@@ -22,7 +22,7 @@ initializeSocket(httpServer)
 
 app.use(cors(
     {
-        origin:"https://spotify-eye-ic6bk.ondigitalocean.app/",
+        origin:"https://spotify-eye-ic6bk.ondigitalocean.app",
         credentials:true
     }
 ))
@@ -43,13 +43,6 @@ app.use('/api/auth',authRouter)
 app.use('/api/songs',songsRouter)
 app.use('/api/albums',albumsRouter)
 app.use('/api/stats',statsRouter)
-
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static(path.join(__dirname,'../frontend/dist')))
-    app.get('*',(req,res)=>{
-        res.sendFile(path.join(__dirname,'../frontend/dist/index.html'))
-    }
-)}
 
 httpServer.listen(process.env.PORT,(req,res)=>{
     console.log(`server is running on port ${process.env.PORT}`)
