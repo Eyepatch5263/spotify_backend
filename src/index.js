@@ -22,7 +22,7 @@ initializeSocket(httpServer)
 
 app.use(cors(
     {
-        origin:"https://spotify-eye-ic6bk.ondigitalocean.app",
+        origin:"https://spotify-eye.netlify.app",
         credentials:true
     }
 ))
@@ -43,6 +43,8 @@ app.use('/api/auth',authRouter)
 app.use('/api/songs',songsRouter)
 app.use('/api/albums',albumsRouter)
 app.use('/api/stats',statsRouter)
+
+
 
 httpServer.listen(process.env.PORT,(req,res)=>{
     console.log(`server is running on port ${process.env.PORT}`)
