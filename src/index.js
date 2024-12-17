@@ -22,7 +22,7 @@ initializeSocket(httpServer)
 
 app.use(cors(
     {
-        origin:"http://localhost:3000",
+        origin:"https://spotify-eye-ic6bk.ondigitalocean.app/",
         credentials:true
     }
 ))
