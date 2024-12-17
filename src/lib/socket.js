@@ -4,7 +4,7 @@ const Messsage = require("../models/message.model")
 const initializeSocket = (server) => {
     const io = new Server(server, {
         cors: {
-            origin: ["https://spotify-eye-ic6bk.ondigitalocean.app","http://localhost:3000"],
+            origin: "http://localhost:3000",
             credentials: true
         }
     })
